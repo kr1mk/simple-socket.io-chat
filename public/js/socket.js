@@ -18,3 +18,7 @@ $('#msgsend').click(() => {
 socket.on('new message', (data) => {
     $('.msgs').append(`<b>${data.id}</b>: ${data.msg}<br>`)
 })
+
+socket.on('usercount', (data) => {
+   $('#usercount').html(`Connected user count: ${data}`)
+})
